@@ -1,2 +1,2 @@
 # Organ-Donatiion-Management-System
-Its all about organ exchange
+The Online Organ Donation Management System (OODMS) is developed mainly for donors, patients, and other health centers to manage donor registration and user maintenance. It is an online system that only can be accessed or valid in a particular state.We implemented Patients and Donors matching on the basis of their information stored.So in this system admin will get full authority to confirm the match or delete the specific donor or patient.If admin confirms the pair for organ donation then the email get generated with donors and patients information using emailjs plugin. 
