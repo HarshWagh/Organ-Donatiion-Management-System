@@ -1,0 +1,97 @@
+//////////////////////////////////////// Center Table//////////////////////////////////////////
+
+CREATE TABLE `center` (
+  `center_id` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) DEFAULT NULL,
+  `city` varchar(50) DEFAULT NULL,
+  `mobile` bigint DEFAULT NULL,
+  PRIMARY KEY (`center_id`),
+  KEY `pk` (`center_id`)
+);
+
+
+//////////////////////////////////////// Donar Table //////////////////////////////////////////
+
+CREATE TABLE `donar` (
+  `donar_id` bigint NOT NULL AUTO_INCREMENT,
+  `name` varchar(45) DEFAULT NULL,
+  `city` varchar(45) DEFAULT NULL,
+  `dob` varchar(45) DEFAULT NULL,
+  `mobile` bigint DEFAULT NULL,
+  `email` varchar(45) DEFAULT NULL,
+  `center` varchar(45) DEFAULT NULL,
+  `gender` varchar(45) DEFAULT NULL,
+  `bg` varchar(45) DEFAULT NULL,
+  `organ` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`donar_id`)
+);
+
+
+
+//////////////////////////////////////// Patient Table//////////////////////////////////////////
+
+
+CREATE TABLE `patient` (
+  `patient_id` bigint NOT NULL AUTO_INCREMENT,
+  `name` varchar(45) DEFAULT NULL,
+  `city` varchar(45) DEFAULT NULL,
+  `dob` varchar(45) DEFAULT NULL,
+  `mobile` bigint DEFAULT NULL,
+  `email` varchar(45) DEFAULT NULL,
+  `center` varchar(45) DEFAULT NULL,
+  `gender` varchar(45) DEFAULT NULL,
+  `bg` varchar(45) DEFAULT NULL,
+  `organ` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`patient_id`)
+);
+
+
+//////////////////////////////////////// Role Table//////////////////////////////////////////
+
+
+CREATE TABLE `tbl_role` (
+  `id` bigint NOT NULL,
+  `name` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+);
+
+
+//////////////////////////////////////// User Table //////////////////////////////////////////
+
+
+CREATE TABLE `tbl_user` (
+  `id` bigint NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `mobile` varchar(255) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `role_id` bigint DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FK6uymj6wvac73cgpojge1n3tmt` (`role_id`),
+  CONSTRAINT `FK6uymj6wvac73cgpojge1n3tmt` FOREIGN KEY (`role_id`) REFERENCES `tbl_role` (`id`)
+);
+
+
+
+//////////////////////////////////////// Matching Table //////////////////////////////////////////
+
+
+CREATE TABLE `matching` (
+  `matching_id` bigint NOT NULL AUTO_INCREMENT,
+  `pname` varchar(50) DEFAULT NULL,
+  `dname` varchar(45) DEFAULT NULL,
+  `porgan` varchar(45) DEFAULT NULL,
+  `pbg` varchar(45) DEFAULT NULL,
+  `pcity` varchar(45) DEFAULT NULL,
+  `pcenter` varchar(45) DEFAULT NULL,
+  `dcity` varchar(45) DEFAULT NULL,
+  `dcenter` varchar(45) DEFAULT NULL,
+  `patient_id` bigint DEFAULT NULL,
+  `pmail` varchar(45) DEFAULT NULL,
+  `dmail` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`matching_id`)
+);
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
